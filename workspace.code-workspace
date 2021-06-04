@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "variables"
+		},
+		{
+			"path": "guessing_game"
+		},
+		{
+			"path": "hello_cargo"
+		},
+		{
+			"path": "hello_world"
+		}
+	]
+}

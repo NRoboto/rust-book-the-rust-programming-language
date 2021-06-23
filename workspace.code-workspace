@@ -20,6 +20,9 @@
     },
     {
       "path": "ownership"
+    },
+    {
+      "path": "structs"
     }
   ]
 }

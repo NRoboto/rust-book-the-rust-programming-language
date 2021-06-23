@@ -23,6 +23,9 @@
     },
     {
       "path": "structs"
+    },
+    {
+      "path": "rectangles"
     }
   ]
 }

@@ -29,6 +29,9 @@
     },
     {
       "path": "enums"
+    },
+    {
+      "path": "modules"
     }
   ]
 }

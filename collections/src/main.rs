@@ -1,4 +1,7 @@
 use std::collections::HashMap;
+
+mod exercises;
+
 fn main() {
     let mut v = vec![1, 2, 3];
     v.push(4);
@@ -57,16 +60,20 @@ fn main() {
     }
 
     let sentence = "the quick brown fox jumps over the lazy dog";
-    let mut letterCount = HashMap::new();
+    let mut letter_count = HashMap::new();
 
     for l in sentence.split("").filter(|&x| x != "" && x != " ") {
-        letterCount
+        letter_count
             .entry(l)
             .and_modify(|count| { *count += 1 })
             .or_insert(1);
     }
 
-    println!("{:?} | length = {}", letterCount, letterCount.len());
+    println!("{:?} | length = {}", letter_count, letter_count.len());
+    println!();
+
+    let v = vec![1, 2, 3, 4, 5, 4, 4, 4, 3, 3, 2, 1];
+    println!("v = {:?}\n{:#?}", v, exercises::stats::get_mean_median_mode(&v));
 }
 
 #[derive(Debug)]

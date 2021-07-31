@@ -1,6 +1,8 @@
 use std::collections::HashMap;
 
 mod exercises;
+use exercises::stats;
+use exercises::pig_latin;
 
 fn main() {
     let mut v = vec![1, 2, 3];
@@ -73,7 +75,13 @@ fn main() {
     println!();
 
     let v = vec![1, 2, 3, 4, 5, 4, 4, 4, 3, 3, 2, 1];
-    println!("v = {:?}\n{:#?}", v, exercises::stats::get_mean_median_mode(&v));
+    println!("v = {:?}\n{:#?}", v, stats::get_mean_median_mode(&v));
+
+    println!("\n\n");
+    println!("To pig latin:");
+    println!("first = {}", pig_latin::to_pig_latin("first"));
+    println!("apple = {}", pig_latin::to_pig_latin("apple"));
+    println!("{} = {}", sentence, pig_latin::to_pig_latin(sentence));
 }
 
 #[derive(Debug)]

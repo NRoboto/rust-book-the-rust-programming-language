@@ -72,28 +72,30 @@ mod types {
     Sales,
   }
   
-  #[derive(Clone, Debug)]
+  #[derive(Clone, Debug, PartialEq, Eq, PartialOrd, Ord)]
   pub struct Name(pub String);
 
   pub type Employees = HashMap<Department, Vec<Name>>;
 }
 
 mod read {
-  use super::types::{Department, Employees, Name};
+  use crate::exercises::company_admin::utils;
+
+use super::types::{Department, Employees};
 
   pub fn view_department_employees(dept: &Department, employees: &Employees) {
     let dept_employees = employees.get(dept).unwrap();
-    println!("{:?}", dept_employees);
+    println!("{:?}", utils::sort_names(dept_employees));
   }
 
   pub fn view_all_employees(employees: &Employees) {
     let mut all_employees = Vec::new();
 
     for (_, names) in employees {
-      names.iter().for_each(|n| all_employees.push(n));
+      names.iter().for_each(|n| all_employees.push(n.clone()));
     }
 
-    println!("{:?}", all_employees);
+    println!("{:?}", utils::sort_names(&all_employees));
   }
 }
 
@@ -109,7 +111,7 @@ mod create {
 }
 
 mod utils {
-  use super::types::Department;
+  use super::types::{Department, Name};
 
   pub fn string_to_department(input: &str) -> Option<Department> {
     println!("input = {}", input);
@@ -122,5 +124,11 @@ mod utils {
 
   pub fn print_help(commands: &[String]) {
     println!("Available commands:\n{:#?}", commands);
+  }
+
+  pub fn sort_names(names: &Vec<Name>) -> Vec<Name> {
+    let mut sorted = names.clone();
+    sorted.sort();
+    sorted
   }
 }

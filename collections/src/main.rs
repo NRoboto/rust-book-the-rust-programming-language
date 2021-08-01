@@ -3,6 +3,7 @@ use std::collections::HashMap;
 mod exercises;
 use exercises::stats;
 use exercises::pig_latin;
+use exercises::company_admin;
 
 fn main() {
     let mut v = vec![1, 2, 3];
@@ -82,6 +83,9 @@ fn main() {
     println!("first = {}", pig_latin::to_pig_latin("first"));
     println!("apple = {}", pig_latin::to_pig_latin("apple"));
     println!("{} = {}", sentence, pig_latin::to_pig_latin(sentence));
+
+    println!("\n\n");
+    company_admin::handle_input();
 }
 
 #[derive(Debug)]

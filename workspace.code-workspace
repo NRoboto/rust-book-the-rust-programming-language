@@ -35,6 +35,9 @@
     },
     {
       "path": "collections"
+    },
+    {
+      "path": "errors"
     }
   ]
 }

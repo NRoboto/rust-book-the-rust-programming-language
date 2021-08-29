@@ -47,6 +47,9 @@
     },
     {
       "path": "minigrep"
+    },
+    {
+      "path": "functional"
     }
   ]
 }

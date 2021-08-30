@@ -50,6 +50,9 @@
     },
     {
       "path": "functional"
+    },
+    {
+      "path": "documentation"
     }
   ]
 }

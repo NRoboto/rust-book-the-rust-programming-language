@@ -68,6 +68,9 @@
     },
     {
       "path": "advanced_features"
+    },
+    {
+      "path": "hello"
     }
   ]
 }
